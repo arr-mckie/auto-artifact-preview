@@ -1,0 +1,14 @@
+{
+  "name": "auto-artifact-preview",
+  "displayName": "Auto Artifact Preview",
+  "description": "Automatically renders HTML files under any repo's docs/artifacts/ folder in Live Preview instead of showing source, and collapses back to a single pane when you navigate away.",
+  "version": "1.0.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "extensionDependencies": ["ms-vscode.live-server"]
+}
