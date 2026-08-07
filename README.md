@@ -35,10 +35,14 @@ Not published to the Marketplace, so it's installed from a `.vsix` file:
 
 ```sh
 cd vscode-extensions/auto-artifact-preview
-npx --yes @vscode/vsce package --allow-missing-repository --skip-license
+npx --yes @vscode/vsce package --allow-missing-repository --skip-license --no-rewrite-relative-links
 code --install-extension auto-artifact-preview-<version>.vsix
 rm auto-artifact-preview-<version>.vsix
 ```
+
+`--no-rewrite-relative-links` keeps the README's `images/preview.png` link relative
+instead of vsce rewriting it into a GitHub raw URL — this repo isn't a public GitHub
+repo, so that URL 404s and the screenshot shows as broken in the Extensions view.
 
 Then reload the window (`Cmd+Shift+P` → "Reload Window"). It's a per-machine
 install — once installed, it's active in every workspace opened by that VS
@@ -63,7 +67,7 @@ Reinstall after editing `extension.js` or `package.json`:
 
 ```sh
 cd vscode-extensions/auto-artifact-preview
-npx --yes @vscode/vsce package --allow-missing-repository --skip-license
+npx --yes @vscode/vsce package --allow-missing-repository --skip-license --no-rewrite-relative-links
 code --install-extension auto-artifact-preview-<version>.vsix
 rm auto-artifact-preview-<version>.vsix
 ```
