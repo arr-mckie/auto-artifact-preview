@@ -27,7 +27,10 @@ function isArtifactHtml(document) {
 function findTabForUri(uri) {
   for (const group of vscode.window.tabGroups.all) {
     for (const tab of group.tabs) {
-      if (tab.input instanceof vscode.TabInputText && tab.input.uri.toString() === uri.toString()) {
+      if (
+        tab.input instanceof vscode.TabInputText &&
+        tab.input.uri.toString() === uri.toString()
+      ) {
         return tab;
       }
     }
@@ -57,7 +60,7 @@ async function closeStalePreviewGroup() {
   if (previewGroup.isActive) return; // user is looking at it right now
 
   const somethingElseIsActive = vscode.window.tabGroups.all.some(
-    (g) => g !== previewGroup && g.isActive && g.tabs.length > 0
+    (g) => g !== previewGroup && g.isActive && g.tabs.length > 0,
   );
   if (!somethingElseIsActive) return;
 
@@ -79,7 +82,10 @@ function activate(context) {
       inFlight.add(key);
 
       try {
-        await vscode.commands.executeCommand('livePreview.start.preview.atFile', document.uri);
+        await vscode.commands.executeCommand(
+          'livePreview.start.preview.atFile',
+          document.uri,
+        );
         await delay(300);
 
         // Re-look-up the source tab now, rather than trusting a reference
@@ -99,12 +105,14 @@ function activate(context) {
       } finally {
         setTimeout(() => inFlight.delete(key), 1500);
       }
-    })
+    }),
   );
 
   const interval = setInterval(() => {
     closeStalePreviewGroup().catch((err) => {
-      output.appendLine(`[error] poll cleanup failed: ${err && err.stack ? err.stack : err}`);
+      output.appendLine(
+        `[error] poll cleanup failed: ${err && err.stack ? err.stack : err}`,
+      );
     });
   }, POLL_INTERVAL_MS);
   context.subscriptions.push({ dispose: () => clearInterval(interval) });

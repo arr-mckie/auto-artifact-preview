@@ -8,8 +8,14 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onStartupFinished"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./extension.js",
-  "extensionDependencies": ["ms-vscode.live-server"]
+  "extensionDependencies": [
+    "ms-vscode.live-server"
+  ]
 }
