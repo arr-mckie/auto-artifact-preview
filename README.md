@@ -69,7 +69,7 @@ rm auto-artifact-preview-<version>.vsix
 ```
 
 Bump `version` in `package.json` first if `code --install-extension` doesn't
-pick up the change — a same-version reinstall isn't always honored.
+pick up the change — a same-version reinstall isn't always honoured.
 
 Uses the agency Oakroyd gold oakleaf (`icon.png`) as its Extensions-view
 icon, so it reads at a glance as one of ours rather than a marketplace

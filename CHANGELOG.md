@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+- Added a screenshot to the README (no functional change; version bump
+  needed to force a reinstall since same-version reinstalls aren't always
+  honoured).
+
 ## 1.2.0
 
 - Added two settings so the extension isn't hardcoded to one repo's
