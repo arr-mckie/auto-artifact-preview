@@ -1,10 +1,17 @@
 const vscode = require('vscode');
 const path = require('path');
 
-const DOCS_SEGMENT = `${path.sep}docs${path.sep}`;
 const POLL_INTERVAL_MS = 700;
 
 const output = vscode.window.createOutputChannel('Auto Artifact Preview');
+
+function getConfig() {
+  const cfg = vscode.workspace.getConfiguration('autoArtifactPreview');
+  return {
+    docsFolderNames: cfg.get('docsFolderNames', ['docs']),
+    autoClosePreview: cfg.get('autoClosePreview', true),
+  };
+}
 
 // The group we personally opened the render into, last time we did so. We
 // deliberately do NOT identify it later by inspecting tab.input type: VS
@@ -16,12 +23,18 @@ let previewGroup;
 // Saved Claude Artifacts live alongside the topic doc that references them
 // (e.g. docs/site/architecture-map.html next to docs/site/architecture.md),
 // not in one flat docs/artifacts/ folder — so any HTML anywhere under a
-// top-level docs/ tree counts. Site source under public_html/ and generated
-// output elsewhere don't match, since neither lives under docs/.
+// matching top-level folder counts. Site source under public_html/ and
+// generated output elsewhere don't match, since neither lives under one of
+// docsFolderNames. The folder list is configurable since other repos may
+// use a different convention (e.g. notes/, artifacts/) than docs/.
 function isArtifactHtml(document) {
   if (!document || document.uri.scheme !== 'file') return false;
   const fsPath = document.uri.fsPath;
-  return fsPath.endsWith('.html') && fsPath.includes(DOCS_SEGMENT);
+  if (!fsPath.endsWith('.html')) return false;
+  const { docsFolderNames } = getConfig();
+  return docsFolderNames.some((name) =>
+    fsPath.includes(`${path.sep}${name}${path.sep}`),
+  );
 }
 
 function findTabForUri(uri) {
@@ -51,6 +64,7 @@ function delay(ms) {
 // (fresh navigation vs. a restored window layout).
 async function closeStalePreviewGroup() {
   if (!previewGroup) return;
+  if (!getConfig().autoClosePreview) return;
 
   if (previewGroup.tabs.length === 0) {
     previewGroup = undefined; // already closed, by us or by the user
