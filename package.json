@@ -1,9 +1,10 @@
 {
   "name": "auto-artifact-preview",
   "displayName": "Auto Artifact Preview",
-  "description": "Automatically renders HTML files under any repo's docs/artifacts/ folder in Live Preview instead of showing source, and collapses back to a single pane when you navigate away.",
-  "version": "1.0.0",
+  "description": "Automatically renders saved Claude Artifact HTML files anywhere under a repo's docs/ tree in Live Preview instead of showing source, and collapses back to a single pane when you navigate away.",
+  "version": "1.1.0",
   "publisher": "local",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },

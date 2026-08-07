@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const path = require('path');
 
-const ARTIFACT_SEGMENT = `${path.sep}docs${path.sep}artifacts${path.sep}`;
+const DOCS_SEGMENT = `${path.sep}docs${path.sep}`;
 const POLL_INTERVAL_MS = 700;
 
 const output = vscode.window.createOutputChannel('Auto Artifact Preview');
@@ -13,10 +13,15 @@ const output = vscode.window.createOutputChannel('Auto Artifact Preview');
 // never work here. Remembering our own group object sidesteps that.
 let previewGroup;
 
+// Saved Claude Artifacts live alongside the topic doc that references them
+// (e.g. docs/site/architecture-map.html next to docs/site/architecture.md),
+// not in one flat docs/artifacts/ folder — so any HTML anywhere under a
+// top-level docs/ tree counts. Site source under public_html/ and generated
+// output elsewhere don't match, since neither lives under docs/.
 function isArtifactHtml(document) {
   if (!document || document.uri.scheme !== 'file') return false;
   const fsPath = document.uri.fsPath;
-  return fsPath.endsWith('.html') && fsPath.includes(ARTIFACT_SEGMENT);
+  return fsPath.endsWith('.html') && fsPath.includes(DOCS_SEGMENT);
 }
 
 function findTabForUri(uri) {
