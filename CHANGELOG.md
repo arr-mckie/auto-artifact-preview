@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.2
+
+- Fixed the README screenshot showing as broken in the Extensions "Details"
+  tab: VS Code always resolves relative README image links against the
+  `repository` field rather than the locally installed extension files, and
+  this repo is private, so that resolution 404s. Embedded the screenshot as
+  a base64 `data:` URI instead.
+
 ## 1.2.1
 
 - Added a screenshot to the README (no functional change; version bump
