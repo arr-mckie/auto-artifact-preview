@@ -31,17 +31,18 @@ alongside this one.
 
 ## Install
 
-Not published to the Marketplace, so it's installed from a `.vsix` file:
+From the Marketplace: search **Auto Artifact Preview** in the Extensions
+view, or install directly:
 
 ```sh
-npx --yes @vscode/vsce package
-code --install-extension auto-artifact-preview-<version>.vsix
-rm auto-artifact-preview-<version>.vsix
+code --install-extension arr-mckie.auto-artifact-preview
 ```
 
-Then reload the window (`Cmd+Shift+P` → "Reload Window"). It's a per-machine
-install — once installed, it's active in every workspace opened by that VS
-Code install, with nothing to configure per-repo.
+It's a per-machine install — once installed, it's active in every workspace
+opened by that VS Code install, with nothing to configure per-repo.
+
+To install a local build instead (see [Development](#development)), package
+it yourself and install from the resulting `.vsix`.
 
 ## Usage
 
@@ -78,6 +79,8 @@ the Marketplace listing.
 Uses the agency Oakroyd gold oakleaf (`icon.png`) as its Extensions-view
 icon, so it reads at a glance as one of ours rather than a marketplace
 install.
+
+To publish a new version to the Marketplace, see [RELEASING.md](RELEASING.md).
 
 ## License
 
