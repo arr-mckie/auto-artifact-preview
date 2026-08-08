@@ -3,7 +3,7 @@
   "displayName": "Auto Artifact Preview",
   "description": "Automatically renders saved Claude Artifact HTML files anywhere under a repo's docs/ tree in Live Preview instead of showing source, and collapses back to a single pane when you navigate away.",
   "version": "1.2.2",
-  "publisher": "local",
+  "publisher": "arr-mckie",
   "author": "Andrew McKie",
   "license": "MIT",
   "icon": "icon.png",
