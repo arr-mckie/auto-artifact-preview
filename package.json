@@ -9,13 +9,12 @@
   "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arr-mckie/site-tools.git",
-    "directory": "vscode-extensions/auto-artifact-preview"
+    "url": "https://github.com/arr-mckie/auto-artifact-preview.git"
   },
   "bugs": {
-    "url": "https://github.com/arr-mckie/site-tools/issues"
+    "url": "https://github.com/arr-mckie/auto-artifact-preview/issues"
   },
-  "homepage": "https://github.com/arr-mckie/site-tools/tree/main/vscode-extensions/auto-artifact-preview#readme",
+  "homepage": "https://github.com/arr-mckie/auto-artifact-preview#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
