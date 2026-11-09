@@ -1,3 +1,7 @@
+---
+title: "auto-artifact-preview · README"
+---
+
 # Auto Artifact Preview
 
 A VS Code extension that renders saved HTML artifacts in Live Preview the
