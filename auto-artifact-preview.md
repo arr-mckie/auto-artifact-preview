@@ -24,6 +24,6 @@
 
 ---
 
-Used for the HTML docs in projects such as [[aa/aa|aa]] (`docs/site/architecture-map.html`).
+Used for the HTML docs in projects such as [[agency_oakroyd/web/aa/aa|aa]] (`docs/site/architecture-map.html`).
 
 *Parent: [[tools]]*
