@@ -21,6 +21,9 @@
 | [README](README.md) | Features and settings |
 | [CHANGELOG](CHANGELOG.md) | Release history |
 | [RELEASING](RELEASING.md) | How to cut a release |
+| [DEVLOG](docs/DEVLOG.md) | What's been done, newest first |
+| [TODO](docs/TODO.md) | What's in play: in progress, to do, to fix |
+| [IDEAS](docs/IDEAS.md) | Future ideas, not yet planned |
 
 ---
 
