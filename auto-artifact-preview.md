@@ -29,4 +29,4 @@
 
 Used for the HTML docs in projects such as [[agency_oakroyd/web/aa/aa|aa]] (`docs/site/architecture-map.html`).
 
-*Parent: [[shared/shared|shared]]*
+*Parent: [[home/home|home]]*
