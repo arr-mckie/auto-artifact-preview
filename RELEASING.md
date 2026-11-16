@@ -44,11 +44,13 @@ your shell — see below if `vsce` complains it's missing or invalid.
 6. **Create**, then copy the token shown (long, no dashes, ~52+ chars) —
    it's shown once.
 7. Update your shell:
+
    ```sh
    # edit the existing VSCE_PAT line in ~/.zshrc with the new token, then:
    source ~/.zshrc
    [ -n "$VSCE_PAT" ] && echo "VSCE_PAT is set" || echo "not set"
    ```
+
 8. Retry `npx --yes @vscode/vsce publish`.
 
 ## Why this exists as a separate doc

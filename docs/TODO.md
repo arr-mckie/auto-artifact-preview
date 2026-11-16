@@ -8,12 +8,12 @@ What's in play: planned, in progress, or needing a fix. When something is done, 
 
 ## In progress
 
-- 
+-
 
 ## To do
 
-- 
+-
 
 ## To fix
 
-- 
+-
