@@ -1,5 +1,5 @@
 {
-  // The same rules as _portfolio/command-log, pecks and environment. Run from the repo root:  markdownlint-cli2 "**/*.md"
+  // The same rules as _portfolio/knowledge, pecks and environment. Run from the repo root:  markdownlint-cli2 "**/*.md"
   "config": {
     "default": true,
     // prose isn't hard-wrapped
