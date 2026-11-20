@@ -1,4 +1,4 @@
-# 🛠️ auto-artifact-preview — VS Code extension
+# auto-artifact-preview — VS Code extension
 
 > Renders saved HTML artifacts in Live Preview the moment you open them, instead of showing raw source, and closes the split when you look away.
 
